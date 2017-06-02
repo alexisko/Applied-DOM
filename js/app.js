@@ -115,6 +115,9 @@
    * to set the context to the correct object
    *   and passing two aditional arguments, event and 'light-green'
    */
+   btn5.addEventListener('click', (event) => {
+    setMyLightClass.apply(btn5, [this, 'light-green']);
+   });
 
 
   /*
