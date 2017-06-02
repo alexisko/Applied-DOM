@@ -182,6 +182,7 @@
    * using the Function prototype method: bind
    * to set the context to the btn10 object
    */
+   var setLight10Green = setMyLightGreen.bind(btn10);
 
 
   /*
@@ -190,6 +191,9 @@
    * the body of the event handler function
    * will invoke the setLight10Green function
    */
+   btn10.addEventListener('click', function() {
+    setLight10Green();
+   });
 
 
   /*
@@ -200,6 +204,7 @@
    *   passing 2 additional hardcoded arguments:
    *     null, 'light-green'
    */
+   var setLight11Green = setMyLightClass.bind(btn11, null, 'light-green');
 
 
   /*
@@ -208,6 +213,9 @@
    * the body of the event handler function
    * will invoke the setLight11Green function
    */
+   btn11.addEventListener('click', function() {
+    setLight11Green();
+   });
 
 
   /*
