@@ -14,9 +14,7 @@
    function setMyLightGreen() {
       var lightId = this.dataset.lightId;
 
-      if(document.getElementById(lightId)) {
-        document.getElementById(lightId).className = 'light-green';
-      }
+      document.getElementById(lightId).className = 'light-green';
    }
 
 
@@ -34,9 +32,7 @@
    function setMyLightClass(event, desiredClass) {
       var lightId = this.dataset.lightId;
 
-      if(document.getElementById(lightId)) {
-        document.getElementById(lightId).className = desiredClass;
-      }
+      document.getElementById(lightId).className = desiredClass;
    }
 
 
@@ -73,7 +69,7 @@
    * to set the context to the correct object (the current context)
    */
    btn1.addEventListener('click', function() {
-    setMyLightGreen.apply(btn1);
+    setMyLightGreen.apply(this);
    });
 
   /*
@@ -84,19 +80,15 @@
    * using the Function prototype method: apply
    * to set the context to the correct object
    */
-   btn2.addEventListener('click', function() {
+   btn2.addEventListener('click', () => {
     setMyLightGreen.apply(btn2);
    });
-
 
   /*
    * Add a click event listener to btn3
    * the handler method will be a reference to the setMyLightGreen function
    */
-   btn3.addEventListener('click', setMyLightGreen.bind(function() {
-
-   }));
-
+   btn3.addEventListener('click', setMyLightGreen);
 
   /*
    * Add a click event listener to btn4
@@ -108,6 +100,9 @@
    * to set the context to the correct object (the current context)
    *   and passing two aditional arguments, event and 'light-green'
    */
+   btn4.addEventListener('click', function(event) {
+    setMyLightClass.apply(btn4, [event, 'light-green']);
+   });
 
 
   /*
