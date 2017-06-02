@@ -224,6 +224,7 @@
    * using the Function prototype method: bind
    * to set the context to the btn12 object
    */
+   var setLight12Class = setMyLightClass.bind(btn12);
 
 
   /*
@@ -235,6 +236,9 @@
    *   passing 2 additional arguments
    *     event, 'light-green'
    */
+   btn12.addEventListener('click', function(event) {
+    setLight12Class(this.event, 'light-green');
+   });
 
 
   /*
@@ -250,6 +254,9 @@
    *   invoke this function expression passing 2 arguments
    *     event, 'light-green'
    */
+   btn13.addEventListener('click', function(event) {
+    setMyLightClass.bind(btn13)(this, 'light-green');
+   });
 
 
   /*
@@ -258,6 +265,7 @@
    * that is the result of invoking the Function prototype method, bind
    * on the setMyLightGreen function
    */
+   btn14.addEventListener('click', setMyLightGreen.bind(btn14));
 
 
   /*
@@ -267,6 +275,7 @@
    *
    * Hint: Do not declare a new function expression as an event handler.
    */
+   btn15.addEventListener('click', setMyLightClass.bind(btn15, this, 'light-green'));
 
 
 }(window));
