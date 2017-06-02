@@ -11,6 +11,13 @@
    * use a dom method to select an element where it's ID matches the value of lightId
    * on this dom element, set the className to 'light-green'
    */
+   function setMyLightGreen() {
+      var lightId = this.dataset.lightId;
+
+      if(document.getElementById(lightId)) {
+        document.getElementById(lightId).className = 'light-green';
+      }
+   }
 
 
   /*
@@ -24,6 +31,13 @@
    * use a dom method to select an element where it's ID matches the value of lightId
    * on this dom element, set the className to the value of desiredClass
    */
+   function setMyLightClass(event, desiredClass) {
+      var lightId = this.dataset.lightId;
+
+      if(document.getElementById(lightId)) {
+        document.getElementById(lightId).className = desiredClass;
+      }
+   }
 
 
   /*
@@ -31,7 +45,24 @@
    * use a dom element selector method to assign each const
    * to the button that has an id of the same name.
    */
+   var bt1, btn2, btn3, btn4, btn5, btn6, btn7, btn8,
+   btn9, btn10, btn11, btn12, btn13, btn14, btn15;
 
+   btn1 = document.getElementById("btn1");
+   btn2 = document.getElementById("btn2");
+   btn3 = document.getElementById("btn3");
+   btn4 = document.getElementById("btn4");
+   btn5 = document.getElementById("btn5");
+   btn6 = document.getElementById("btn6");
+   btn7 = document.getElementById("btn7");
+   btn8 = document.getElementById("btn8");
+   btn9 = document.getElementById("btn9");
+   btn10 = document.getElementById("btn10");
+   btn11 = document.getElementById("btn11");
+   btn12 = document.getElementById("btn12");
+   btn13 = document.getElementById("btn13");
+   btn14 = document.getElementById("btn14");
+   btn15 = document.getElementById("btn15");
 
   /*
    * Add a click event listener to btn1
@@ -41,7 +72,9 @@
    * using the Function prototype method: apply
    * to set the context to the correct object (the current context)
    */
-
+   btn1.addEventListener('click', function() {
+    setMyLightGreen.apply(btn1);
+   });
 
   /*
    * Add a click event listener to btn2
@@ -51,12 +84,18 @@
    * using the Function prototype method: apply
    * to set the context to the correct object
    */
+   btn2.addEventListener('click', function() {
+    setMyLightGreen.apply(btn2);
+   });
 
 
   /*
    * Add a click event listener to btn3
    * the handler method will be a reference to the setMyLightGreen function
    */
+   btn3.addEventListener('click', setMyLightGreen.bind(function() {
+
+   }));
 
 
   /*
